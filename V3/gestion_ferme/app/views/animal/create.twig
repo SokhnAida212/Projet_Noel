@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter un Animal</title>
+</head>
+<body>
+    <h1>Ajouter un Animal</h1>
+    <form action="/animaux/store" method="POST">
+        <label for="type">Type:</label>
+        <input type="text" name="type" id="type" required><br>
+
+        <label for="age">Âge:</label>
+        <input type="number" name="age" id="age" required><br>
+
+        <label for="sante">Santé:</label>
+        <input type="text" name="sante" id="sante" required><br>
+
+        <label for="equipement_id">Équipement:</label>
+        <select name="equipement_id" id="equipement_id">
+            {% for equipement in equipements %}
+                <option value="{{ equipement.id }}">{{ equipement.nom }}</option>
+            {% endfor %}
+        </select><br>
+
+        <button type="submit">Ajouter</button>
+    </form>
+</body>
+</html>

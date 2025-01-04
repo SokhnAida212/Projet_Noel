@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des Animaux</title>
+</head>
+<body>
+    <h1>Liste des Animaux</h1>
+    <a href="/animaux/creer">Ajouter un Animal</a>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>Âge</th>
+                <th>Santé</th>
+                <th>Équipement</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for animal in animaux %}
+                <tr>
+                    <td>{{ animal.type }}</td>
+                    <td>{{ animal.age }}</td>
+                    <td>{{ animal.sante }}</td>
+                    <td>{{ animal.equipement.nom }}</td>
+                    <td>
+                        <a href="/animaux/{{ animal.id }}/modifier">Modifier</a>
+                        <a href="/animaux/{{ animal.id }}/supprimer" onclick="return confirm('Êtes-vous sûr ?')">Supprimer</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

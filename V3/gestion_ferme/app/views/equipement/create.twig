@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter un Équipement</title>
+</head>
+<body>
+    <h1>Ajouter un Équipement</h1>
+    <form action="/equipements/store" method="POST">
+        <label for="nom">Nom:</label>
+        <input type="text" name="nom" id="nom" required><br>
+
+        <label for="etat">État:</label>
+        <input type="text" name="etat" id="etat" required><br>
+
+        <label for="disponibilite">Disponibilité:</label>
+        <input type="text" name="disponibilite" id="disponibilite" required><br>
+
+        <button type="submit">Ajouter</button>
+    </form>
+</body>
+</html>

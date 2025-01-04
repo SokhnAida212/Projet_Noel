@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des Équipements</title>
+</head>
+<body>
+    <h1>Liste des Équipements</h1>
+    <a href="/equipements/creer">Ajouter un Équipement</a>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>État</th>
+                <th>Disponibilité</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for equipement in equipements %}
+                <tr>
+                    <td>{{ equipement.nom }}</td>
+                    <td>{{ equipement.etat }}</td>
+                    <td>{{ equipement.disponibilite }}</td>
+                    <td>
+                        <a href="/equipements/{{ equipement.id }}/modifier">Modifier</a>
+                        <a href="/equipements/{{ equipement.id }}/supprimer" onclick="return confirm('Êtes-vous sûr ?')">Supprimer</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

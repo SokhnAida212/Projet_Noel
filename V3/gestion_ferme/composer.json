@@ -1,0 +1,13 @@
+{
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "require": {
+        "doctrine/orm": "^3.3",
+        "twig/twig": "^3.18",
+        "symfony/cache": "^6.4",
+        "doctrine/dbal": "^4.2"
+    }
+}

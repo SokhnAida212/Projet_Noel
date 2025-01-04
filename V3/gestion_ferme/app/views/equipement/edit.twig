@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modifier l'Équipement</title>
+</head>
+<body>
+    <h1>Modifier l'Équipement</h1>
+    <form action="/equipements/{{ equipement.id }}/update" method="POST">
+        <label for="nom">Nom:</label>
+        <input type="text" name="nom" id="nom" value="{{ equipement.nom }}" required><br>
+
+        <label for="etat">État:</label>
+        <input type="text" name="etat" id="etat" value="{{ equipement.etat }}" required><br>
+
+        <label for="disponibilite">Disponibilité:</label>
+        <input type="text" name="disponibilite" id="disponibilite" value="{{ equipement.disponibilite }}" required><br>
+
+        <button type="submit">Mettre à jour</button>
+    </form>
+</body>
+</html>
