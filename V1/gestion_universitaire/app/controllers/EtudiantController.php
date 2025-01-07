@@ -1,18 +1,18 @@
 <?php
 
     require_once(__DIR__ . '../../database.php');
-    require_once(__DIR__ . '/../model/Etudiants.php');
+    require_once(__DIR__ . '../../model/Etudiants.php');
 
     function index(){
-        $Cours = getAll();
-        require_once __DIR__ . '/../view/Etudiants/show.php';
+        $etudiant = getAll();
+        require_once __DIR__ . '../../view/etudiants/show.php';
     }
     function remove($id){
         delete($id);
         header('location: index.php');
     }
     function create(){
-        require_once __DIR__ . '/../view/Etudiants/create.php';
+        require_once __DIR__ . '../../view/etudiants/create.php';
     }
     
     function store(){
@@ -27,7 +27,7 @@
             $id = $_GET['id'];
             $etudiant = getById($id); 
             if ($etudiant) {
-                require_once __DIR__ . '/../view/Etudiants/edit.php';
+                require_once __DIR__ . '../../view/etudiants/edit.php';
             } else {
                 echo "Étudiant introuvable.";
             }
@@ -37,7 +37,7 @@
     }
     
     
-    function updateEtudiant(){
+    function updateetudiant(){
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             extract($_POST); 
             $result = update($id, $nom, $prenom, $email, $filiere);

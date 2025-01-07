@@ -22,6 +22,5 @@
         <input type="submit" value="Mettre à jour">
     </form>
 
-    <a href="?action=listEtudiants">Retour à la liste des étudiants</a>
 </body>
 </html>

@@ -14,6 +14,7 @@
         }
     } elseif (isset($_GET['id'])) {
         remove($_GET['id']); 
+    } else {
         index(); 
     }
 

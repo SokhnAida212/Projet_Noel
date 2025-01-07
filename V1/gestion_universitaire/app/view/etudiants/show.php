@@ -8,7 +8,7 @@
                 <th>Filière</th>
                 <th>Actions</th>
             </tr>
-        <?php while($r = pg_fetch_assoc($Cours)) :?>
+        <?php while($r = pg_fetch_assoc($etudiant)) :?>
             <tr>
                 <td><?php echo $r["id"]  ?></td>
                 <td><?php echo $r["nom"] ?></td>
